@@ -13,6 +13,7 @@
 		4ECEDD0C24F9B835001BA270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECEDD0A24F9B835001BA270 /* Main.storyboard */; };
 		4ECEDD0E24F9B837001BA270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECEDD0D24F9B837001BA270 /* Assets.xcassets */; };
 		4ECEDD1124F9B837001BA270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECEDD0F24F9B837001BA270 /* LaunchScreen.storyboard */; };
+		4ECEDD1924F9BFE9001BA270 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4ECEDD0D24F9B837001BA270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ECEDD1024F9B837001BA270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ECEDD1224F9B837001BA270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				4ECEDD0424F9B835001BA270 /* AppDelegate.swift */,
 				4ECEDD0624F9B835001BA270 /* SceneDelegate.swift */,
 				4ECEDD0824F9B835001BA270 /* ViewController.swift */,
+				4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */,
 				4ECEDD0A24F9B835001BA270 /* Main.storyboard */,
 				4ECEDD0D24F9B837001BA270 /* Assets.xcassets */,
 				4ECEDD0F24F9B837001BA270 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				4ECEDD0924F9B835001BA270 /* ViewController.swift in Sources */,
 				4ECEDD0524F9B835001BA270 /* AppDelegate.swift in Sources */,
+				4ECEDD1924F9BFE9001BA270 /* CollectionViewCell.swift in Sources */,
 				4ECEDD0724F9B835001BA270 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
