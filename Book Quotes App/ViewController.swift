@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    //MARK: - Properties
+    
+    var viewModel = QuotesViewModel()
     // MARK: - Outlets
     
     @IBOutlet var pageControler: UIPageControl!
@@ -31,11 +36,26 @@ class ViewController: UIViewController {
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
+        viewModel.createQuotes()
+        setupPageControl()
     }
     
     // MARK: - Actions
     
-    @IBAction func nextButtonTapped(_ sender: Any) {}
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        let nextRow = getCurrentIndex() + 1
+        pageControler.currentPage = nextRow
+        let nextIndexPath = IndexPath(row: nextRow, section: 0)
+        collectionView.scrollToItem(at: nextIndexPath, at: .left, animated: true)
+    }
+    
+    private func getCurrentIndex() -> Int {
+        return Int(collectionView.contentOffset.x / collectionView.frame.width)
+    }
+    
+    private func setupPageControl() {
+        pageControler.numberOfPages = viewModel.quotes.count
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -46,11 +66,15 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.quotes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        let quote = viewModel.quotes[indexPath.row]
+        cell.authorLabel.text = quote.author
+        cell.quoteLabel.text = quote.quote
+//
         cell.backgroundColor = indexPath.item % 2 == 0 ? .yellow : .purple
         return cell
     }
@@ -59,3 +83,5 @@ extension ViewController: UICollectionViewDataSource {
         return 0
     }
 }
+
+

@@ -11,14 +11,17 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    
+   
     @IBOutlet var cellView: UIView!
+    @IBOutlet var authorLabel: UILabel!
+    @IBOutlet var quoteLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         cellView.translatesAutoresizingMaskIntoConstraints = false
         cellView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
+        
     }
     
 }

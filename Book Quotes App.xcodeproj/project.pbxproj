@@ -14,6 +14,8 @@
 		4ECEDD0E24F9B837001BA270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECEDD0D24F9B837001BA270 /* Assets.xcassets */; };
 		4ECEDD1124F9B837001BA270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECEDD0F24F9B837001BA270 /* LaunchScreen.storyboard */; };
 		4ECEDD1924F9BFE9001BA270 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */; };
+		4ECEDD1B24F9CC03001BA270 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECEDD1A24F9CC03001BA270 /* Quotes.swift */; };
+		4ECEDD1D24F9CF62001BA270 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECEDD1C24F9CF62001BA270 /* QuotesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4ECEDD1024F9B837001BA270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4ECEDD1224F9B837001BA270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		4ECEDD1A24F9CC03001BA270 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		4ECEDD1C24F9CF62001BA270 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				4ECEDD0D24F9B837001BA270 /* Assets.xcassets */,
 				4ECEDD0F24F9B837001BA270 /* LaunchScreen.storyboard */,
 				4ECEDD1224F9B837001BA270 /* Info.plist */,
+				4ECEDD1A24F9CC03001BA270 /* Quotes.swift */,
+				4ECEDD1C24F9CF62001BA270 /* QuotesViewModel.swift */,
 			);
 			path = "Book Quotes App";
 			sourceTree = "<group>";
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ECEDD0924F9B835001BA270 /* ViewController.swift in Sources */,
+				4ECEDD1D24F9CF62001BA270 /* QuotesViewModel.swift in Sources */,
 				4ECEDD0524F9B835001BA270 /* AppDelegate.swift in Sources */,
 				4ECEDD1924F9BFE9001BA270 /* CollectionViewCell.swift in Sources */,
+				4ECEDD1B24F9CC03001BA270 /* Quotes.swift in Sources */,
 				4ECEDD0724F9B835001BA270 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
