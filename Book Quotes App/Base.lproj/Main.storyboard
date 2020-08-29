@@ -99,7 +99,6 @@
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.75660055879999999" green="0.75670796630000003" blue="0.75656664370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="b68-v5-8Q0" firstAttribute="leading" secondItem="AEZ-Bb-Pei" secondAttribute="leading" constant="24" id="BQA-u1-eqd"/>
                                                                 <constraint firstItem="b68-v5-8Q0" firstAttribute="top" secondItem="AEZ-Bb-Pei" secondAttribute="top" id="Pxn-7e-ZKd"/>
@@ -108,10 +107,21 @@
                                                                 <constraint firstAttribute="trailing" secondItem="b68-v5-8Q0" secondAttribute="trailing" constant="24" id="mdF-fD-NoQ"/>
                                                             </constraints>
                                                         </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TYs-qj-EzO">
+                                                            <rect key="frame" x="0.0" y="145" width="380" height="581"/>
+                                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="TYs-qj-EzO" secondAttribute="height" multiplier="380:581" id="4fe-C5-0jW"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.8631207192" blue="0.32702803940000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="TYs-qj-EzO" secondAttribute="bottom" id="1be-94-gyF"/>
                                                         <constraint firstItem="AEZ-Bb-Pei" firstAttribute="top" secondItem="66P-7z-Mwy" secondAttribute="top" id="2Xf-i1-WeI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TYs-qj-EzO" secondAttribute="trailing" id="3d7-IT-vAH"/>
+                                                        <constraint firstItem="TYs-qj-EzO" firstAttribute="top" secondItem="AEZ-Bb-Pei" secondAttribute="bottom" id="59U-m0-Nfg"/>
+                                                        <constraint firstItem="TYs-qj-EzO" firstAttribute="height" secondItem="66P-7z-Mwy" secondAttribute="height" multiplier="0.8" id="E1m-Q6-mmx"/>
+                                                        <constraint firstItem="TYs-qj-EzO" firstAttribute="leading" secondItem="66P-7z-Mwy" secondAttribute="leading" id="SsF-7W-vgo"/>
                                                         <constraint firstAttribute="trailing" secondItem="AEZ-Bb-Pei" secondAttribute="trailing" id="mPX-nn-G4I"/>
                                                         <constraint firstItem="AEZ-Bb-Pei" firstAttribute="height" secondItem="66P-7z-Mwy" secondAttribute="height" multiplier="0.2" id="r5A-1P-20r"/>
                                                         <constraint firstItem="AEZ-Bb-Pei" firstAttribute="leading" secondItem="66P-7z-Mwy" secondAttribute="leading" id="yWg-0F-ZK3"/>
@@ -121,6 +131,7 @@
                                                 <connections>
                                                     <outlet property="authorLabel" destination="yQa-Yr-XtX" id="ash-gJ-RjC"/>
                                                     <outlet property="cellView" destination="66P-7z-Mwy" id="y1Q-WN-KYa"/>
+                                                    <outlet property="imageView" destination="TYs-qj-EzO" id="2rN-DG-0qV"/>
                                                     <outlet property="quoteLabel" destination="FtE-5b-Bja" id="ymd-3h-qj0"/>
                                                 </connections>
                                             </collectionViewCell>

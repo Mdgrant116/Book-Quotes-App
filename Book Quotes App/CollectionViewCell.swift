@@ -15,6 +15,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var cellView: UIView!
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var quoteLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
     
     
     override func awakeFromNib() {

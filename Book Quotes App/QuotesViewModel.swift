@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct QuotesViewModel {
     
@@ -15,7 +15,7 @@ struct QuotesViewModel {
        
        
     mutating func createQuotes() {
-        quotes.append(Quote(author: "Stephen King", quote: "Monsters are real, and ghosts are real too. They live inside us, and sometimes, they win."))
+        quotes.append(Quote(author: "Stephen King", quote: "Monsters are real, and ghosts are real too. They live inside us, and sometimes, they win.", image: UIImage(named: "StephenKing") ?? UIImage()))
          quotes.append(Quote(author: "Neil Gaiman", quote: "What power would Hell have if those imprisoned there were not able to dream of Heaven?"))
          quotes.append(Quote(author: "James Baldwin", quote: "It is certain, in any case, that ignorance, allied with power, is the most ferocious enemy justice can have."))
          quotes.append(Quote(author: "Sylvia Plath", quote: "Dying is an art, like everything else. I do it exceptionally well. I do it so it feels like hell. I do it so it feels real. I guess you could say I've a call."))

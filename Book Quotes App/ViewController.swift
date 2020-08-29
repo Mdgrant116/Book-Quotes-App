@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     //MARK: - Properties
     
     var viewModel = QuotesViewModel()
+    var collectionViewWidth: CGFloat {
+        return collectionView.frame.size.width
+    }
+    var collectionViewAlpha: CGFloat? 
     // MARK: - Outlets
     
     @IBOutlet var pageControler: UIPageControl!
@@ -56,6 +60,10 @@ class ViewController: UIViewController {
     private func setupPageControl() {
         pageControler.numberOfPages = viewModel.quotes.count
     }
+    
+    private func showItem(at index: Int) {
+        pageControler.currentPage = index
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -74,13 +82,43 @@ extension ViewController: UICollectionViewDataSource {
         let quote = viewModel.quotes[indexPath.row]
         cell.authorLabel.text = quote.author
         cell.quoteLabel.text = quote.quote
-//
-        cell.backgroundColor = indexPath.item % 2 == 0 ? .yellow : .purple
+        if let alpha = collectionViewAlpha {
+             print(alpha)
+            cell.imageView.alpha = alpha
+        }
+        cell.imageView.image = quote.image
         return cell
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = getCurrentIndex()
+        showItem(at: index)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let xValue = scrollView.contentOffset.x
+        
+        let index = getCurrentIndex()
+        let fadeInAlpha =  (xValue - collectionViewWidth * CGFloat(index)) / collectionViewWidth
+        let fadeOutAlpha = CGFloat(1 - fadeInAlpha)
+//        print(fadeInAlpha)
+         let selectedItems = collectionView.indexPathsForSelectedItems
+        
+        guard let selectedItem = selectedItems else { return }
+for indexPath in selectedItem {
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+            cell.imageView.alpha = fadeOutAlpha
+                   }
+        }
+        collectionViewAlpha = fadeOutAlpha
+       
+
     }
 }
 

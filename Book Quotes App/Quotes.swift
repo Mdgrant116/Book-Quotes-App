@@ -11,11 +11,5 @@ import UIKit
 struct Quote {
     var author: String = ""
     var quote: String = ""
-
-   
-    func createQuotes() {
-         
-        
-    }
-    
+    var image: UIImage = UIImage()
 }
