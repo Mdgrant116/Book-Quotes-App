@@ -62,18 +62,50 @@
 		4ECEDD0324F9B835001BA270 /* Book Quotes App */ = {
 			isa = PBXGroup;
 			children = (
-				4ECEDD0424F9B835001BA270 /* AppDelegate.swift */,
-				4ECEDD0624F9B835001BA270 /* SceneDelegate.swift */,
-				4ECEDD0824F9B835001BA270 /* ViewController.swift */,
-				4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */,
-				4ECEDD0A24F9B835001BA270 /* Main.storyboard */,
-				4ECEDD0D24F9B837001BA270 /* Assets.xcassets */,
+				4ECEDD1E24FA758F001BA270 /* Models */,
+				4ECEDD1F24FA75AC001BA270 /* Views */,
 				4ECEDD0F24F9B837001BA270 /* LaunchScreen.storyboard */,
 				4ECEDD1224F9B837001BA270 /* Info.plist */,
-				4ECEDD1A24F9CC03001BA270 /* Quotes.swift */,
-				4ECEDD1C24F9CF62001BA270 /* QuotesViewModel.swift */,
+				4ECEDD0424F9B835001BA270 /* AppDelegate.swift */,
+				4ECEDD0624F9B835001BA270 /* SceneDelegate.swift */,
+				4ECEDD0D24F9B837001BA270 /* Assets.xcassets */,
 			);
 			path = "Book Quotes App";
+			sourceTree = "<group>";
+		};
+		4ECEDD1E24FA758F001BA270 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4ECEDD1A24F9CC03001BA270 /* Quotes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4ECEDD1F24FA75AC001BA270 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4ECEDD2024FA75BD001BA270 /* Quotes */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4ECEDD2024FA75BD001BA270 /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				4ECEDD2124FA75DC001BA270 /* Quotes Cell */,
+				4ECEDD0824F9B835001BA270 /* ViewController.swift */,
+				4ECEDD0A24F9B835001BA270 /* Main.storyboard */,
+				4ECEDD1C24F9CF62001BA270 /* QuotesViewModel.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		4ECEDD2124FA75DC001BA270 /* Quotes Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4ECEDD1824F9BFE9001BA270 /* CollectionViewCell.swift */,
+			);
+			path = "Quotes Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

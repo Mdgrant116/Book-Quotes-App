@@ -9,15 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-    //MARK: - Properties
+    // MARK: - Properties
     
     var viewModel = QuotesViewModel()
     var collectionViewWidth: CGFloat {
         return collectionView.frame.size.width
     }
-    var collectionViewAlpha: CGFloat? 
+
     // MARK: - Outlets
     
     @IBOutlet var pageControler: UIPageControl!
@@ -82,15 +80,11 @@ extension ViewController: UICollectionViewDataSource {
         let quote = viewModel.quotes[indexPath.row]
         cell.authorLabel.text = quote.author
         cell.quoteLabel.text = quote.quote
-        if let alpha = collectionViewAlpha {
-             print(alpha)
-            cell.imageView.alpha = alpha
-        }
         cell.imageView.image = quote.image
+        
         return cell
     }
     
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -104,22 +98,18 @@ extension ViewController: UICollectionViewDataSource {
         let xValue = scrollView.contentOffset.x
         
         let index = getCurrentIndex()
-        let fadeInAlpha =  (xValue - collectionViewWidth * CGFloat(index)) / collectionViewWidth
-        let fadeOutAlpha = CGFloat(1 - fadeInAlpha)
-//        print(fadeInAlpha)
-         let selectedItems = collectionView.indexPathsForSelectedItems
-        
-        guard let selectedItem = selectedItems else { return }
-for indexPath in selectedItem {
-        
-        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
-            cell.imageView.alpha = fadeOutAlpha
-                   }
-        }
-        collectionViewAlpha = fadeOutAlpha
-       
 
+        let fadeInAlpha = (xValue - collectionViewWidth * CGFloat(index)) / collectionViewWidth
+        let fadeOutAlpha = CGFloat(1 - fadeInAlpha)
+        let selectedItems = collectionView.indexPathsForVisibleItems
+        for indexPath in selectedItems {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell {
+                cell.imageView.alpha = fadeOutAlpha
+            }
+    
+            if let cell = collectionView.cellForItem(at: IndexPath(row: index + 1, section: 0)) as? CollectionViewCell {
+                cell.imageView.alpha = fadeInAlpha
+            }
+        }
     }
 }
-
-
